@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="indioExamen.Views.Registro"
+    Title="Registro"
+    BackgroundColor="#F3F0FF">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20,25"
+            Spacing="20"
+            MaximumWidthRequest="650"
+            HorizontalOptions="Center">
+
+            <!-- USUARIO CONECTADO -->
+            <Border
+                BackgroundColor="#E8E0FF"
+                StrokeThickness="0"
+                Padding="15"
+                StrokeShape="RoundRectangle 12">
+
+                <Label
+                    x:Name="lblUsuarioConectado"
+                    Text="Usuario conectado:"
+                    TextColor="#382184"
+                    FontSize="14"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="End"/>
+            </Border>
+
+            <!-- TITULO -->
+            <Label
+                Text="REGISTRO"
+                FontSize="24"
+                FontAttributes="Bold"
+                TextColor="#382184"
+                HorizontalTextAlignment="Center"/>
+
+            <Label
+                Text="Registro de estudiantes"
+                FontSize="14"
+                TextColor="#77738C"
+                HorizontalTextAlignment="Center"/>
+
+            <!-- TARJETA PRINCIPAL -->
+            <Border
+                BackgroundColor="White"
+                Stroke="#DED7FA"
+                StrokeThickness="1"
+                Padding="20"
+                StrokeShape="RoundRectangle 18">
+
+                <Border.Shadow>
+                    <Shadow
+                        Brush="#B8A8E5"
+                        Offset="0,5"
+                        Radius="12"
+                        Opacity="0.18"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="20">
+
+                    <Label
+                        Text="INFORMACIÓN DEL CURSO"
+                        TextColor="#5634C5"
+                        FontSize="16"
+                        FontAttributes="Bold"/>
+
+                    <!-- GRID 5 FILAS Y 2 COLUMNAS -->
+                    <Grid
+                        RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                        ColumnDefinitions="120,*"
+                        RowSpacing="15"
+                        ColumnSpacing="10">
+
+                        <!-- FECHA -->
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Text="Fecha:"
+                            TextColor="#382184"
+                            VerticalTextAlignment="Center"/>
+
+                        <DatePicker
+                            x:Name="dpFecha"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            TextColor="#242033"
+                            BackgroundColor="#F4F0FF"/>
+
+                        <!-- PAIS -->
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Text="País:"
+                            TextColor="#382184"
+                            VerticalTextAlignment="Center"/>
+
+                        <Picker
+                            x:Name="pkPais"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Title="Seleccione país"
+                            TextColor="#242033"
+                            TitleColor="#77738C"
+                            BackgroundColor="#F4F0FF"
+                            SelectedIndexChanged="PkPais_SelectedIndexChanged">
+
+                            <Picker.Items>
+                                <x:String>Ecuador</x:String>
+                                <x:String>Colombia</x:String>
+                                <x:String>Perú</x:String>
+                            </Picker.Items>
+                        </Picker>
+
+                        <!-- CIUDAD -->
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Text="Ciudad:"
+                            TextColor="#382184"
+                            VerticalTextAlignment="Center"/>
+
+                        <Picker
+                            x:Name="pkCiudad"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Title="Seleccione ciudad"
+                            TextColor="#242033"
+                            TitleColor="#77738C"
+                            BackgroundColor="#F4F0FF"/>
+
+                        <!-- MONTO INICIAL -->
+                        <Label
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Text="Monto inicial:"
+                            TextColor="#382184"
+                            VerticalTextAlignment="Center"/>
+
+                        <Entry
+                            x:Name="txtMontoInicial"
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Placeholder="Ingrese monto"
+                            Keyboard="Numeric"
+                            TextColor="#242033"
+                            PlaceholderColor="#888888"
+                            BackgroundColor="#F4F0FF"
+                            TextChanged="TxtMontoInicial_TextChanged"/>
+
+                        <!-- PAGO MENSUAL -->
+                        <Label
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            Text="Pago mensual:"
+                            TextColor="#382184"
+                            VerticalTextAlignment="Center"/>
+
+                        <Entry
+                            x:Name="txtPagoMensual"
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            Placeholder="Valor calculado"
+                            IsReadOnly="True"
+                            TextColor="#382184"
+                            BackgroundColor="#E8E0FF"/>
+
+                    </Grid>
+
+                    <!-- BOTON CALCULAR -->
+                    <Button
+                        Text="CALCULAR PAGO MENSUAL"
+                        BackgroundColor="#5634C5"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="50"
+                        Clicked="BtnCalcular_Clicked"/>
+
+                    <BoxView
+                        HeightRequest="1"
+                        Color="#DED7FA"/>
+
+                    <Label
+                        Text="DATOS DEL ESTUDIANTE"
+                        TextColor="#5634C5"
+                        FontSize="16"
+                        FontAttributes="Bold"/>
+
+                    <!-- GRID 2 FILAS Y 3 COLUMNAS -->
+                    <Grid
+                        RowDefinitions="Auto,Auto"
+                        ColumnDefinitions="*,*,*"
+                        RowSpacing="10"
+                        ColumnSpacing="8">
+
+                        <!-- ENCABEZADOS -->
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Text="Nombre"
+                            TextColor="#382184"/>
+
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Text="Apellido"
+                            TextColor="#382184"/>
+
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Text="Edad"
+                            TextColor="#382184"/>
+
+                        <!-- CAMPOS -->
+                        <Entry
+                            x:Name="txtNombre"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Placeholder="Nombre"
+                            PlaceholderColor="#888888"
+                            FontSize="13"
+                            TextColor="#242033"
+                            BackgroundColor="#F4F0FF"/>
+
+                        <Entry
+                            x:Name="txtApellido"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Placeholder="Apellido"
+                            PlaceholderColor="#888888"
+                            FontSize="13"
+                            TextColor="#242033"
+                            BackgroundColor="#F4F0FF"/>
+
+                        <Entry
+                            x:Name="txtEdad"
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Placeholder="Edad"
+                            PlaceholderColor="#888888"
+                            Keyboard="Numeric"
+                            FontSize="13"
+                            TextColor="#242033"
+                            BackgroundColor="#F4F0FF"/>
+
+                    </Grid>
+
+                    <!-- BOTON RESUMEN -->
+                    <Button
+                        Style="{StaticResource BotonGlobal}"
+                        Text="VER RESUMEN"
+                        BackgroundColor="#382184"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="52"
+                        Margin="0,10,0,0"
+                        Clicked="BtnResumen_Clicked"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

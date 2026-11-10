@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="indioExamen.Views.Login"
+    Title="Login"
+    BackgroundColor="#F3F0FF">
+
+    <ScrollView>
+        <Grid Padding="20,35"
+              MinimumHeightRequest="620">
+
+            <Border
+                MaximumWidthRequest="560"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="White"
+                Padding="25,35"
+                Stroke="#DED7FA"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 24">
+
+                <Border.Shadow>
+                    <Shadow
+                        Brush="#B8A8E5"
+                        Offset="0,7"
+                        Radius="18"
+                        Opacity="0.25"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="22">
+
+                    <!-- LOGO SUPERIOR -->
+                    <Border
+                        BackgroundColor="#F1EBFF"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 50"
+                        HeightRequest="105"
+                        WidthRequest="105"
+                        HorizontalOptions="Center">
+
+                        <Image
+                            Source="dotnet_bot.png"
+                            HeightRequest="80"
+                            WidthRequest="80"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+                    </Border>
+
+                    <!-- NOMBRE DE LA EMPRESA -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label
+                            Text="SUDA CURSOS"
+                            TextColor="#382184"
+                            FontSize="25"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Center"/>
+
+                        <Label
+                            Text="Plataforma de cursos online"
+                            TextColor="#77738C"
+                            FontSize="13"
+                            HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+
+                    <!-- TITULO DEL EXAMEN -->
+                    <Label
+                        Text="INICIAR SESIÓN"
+                        TextColor="Red"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        HorizontalTextAlignment="Center"
+                        Margin="0,12,0,5"/>
+
+                    <!-- GRID OBLIGATORIO 2X2 -->
+                    <Border
+                        BackgroundColor="#F8F6FF"
+                        Stroke="#D6CCFA"
+                        StrokeThickness="1"
+                        Padding="15"
+                        StrokeShape="RoundRectangle 14">
+
+                        <Grid
+                            RowDefinitions="Auto,Auto"
+                            ColumnDefinitions="115,*"
+                            RowSpacing="18"
+                            ColumnSpacing="10">
+
+                            <!-- FILA 1: USUARIO -->
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Text="Usuario:"
+                                TextColor="#382184"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                VerticalTextAlignment="Center"/>
+
+                            <Border
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                BackgroundColor="White"
+                                Stroke="#D8CFF2"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 9"
+                                Padding="8,0">
+
+                                <Entry
+                                    x:Name="txtUsuario"
+                                    Placeholder="Ingrese usuario"
+                                    PlaceholderColor="#89849A"
+                                    TextColor="#242033"
+                                    BackgroundColor="Transparent"
+                                    FontSize="14"
+                                    HeightRequest="48"/>
+                            </Border>
+
+                            <!-- FILA 2: CONTRASEÑA -->
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Text="Contraseña:"
+                                TextColor="#382184"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                VerticalTextAlignment="Center"/>
+
+                            <Border
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                BackgroundColor="White"
+                                Stroke="#D8CFF2"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 9"
+                                Padding="8,0">
+
+                                <Entry
+                                    x:Name="txtContrasena"
+                                    Placeholder="Ingrese contraseña"
+                                    PlaceholderColor="#89849A"
+                                    TextColor="#242033"
+                                    BackgroundColor="Transparent"
+                                    FontSize="14"
+                                    IsPassword="True"
+                                    HeightRequest="48"/>
+                            </Border>
+
+                        </Grid>
+                    </Border>
+
+                    <!-- BOTÓN DE INGRESO -->
+                    <Button
+                        Style="{StaticResource BotonGlobal}"
+                        Text="INICIAR SESIÓN"
+                        BackgroundColor="#5634C5"
+                        TextColor="White"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        HeightRequest="55"
+                        CornerRadius="12"
+                        Margin="0,10,0,0"
+                        Clicked="BtnIniciarSesion_Clicked"/>
+
+                    <Label
+                        Text="Sistema de registro de estudiantes"
+                        TextColor="#9893AA"
+                        FontSize="12"
+                        HorizontalTextAlignment="Center"
+                        Margin="0,8,0,0"/>
+
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+    </ScrollView>
+</ContentPage>

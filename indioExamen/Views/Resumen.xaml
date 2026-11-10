@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="indioExamen.Views.Resumen"
+    Title="Resumen"
+    BackgroundColor="#F3F0FF">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20,25"
+            Spacing="20"
+            MaximumWidthRequest="650"
+            HorizontalOptions="Center">
+
+            <!-- USUARIO CONECTADO -->
+            <Border
+                BackgroundColor="#E8E0FF"
+                StrokeThickness="0"
+                Padding="15"
+                StrokeShape="RoundRectangle 12">
+
+                <Label
+                    x:Name="lblUsuarioConectado"
+                    Text="Usuario conectado:"
+                    TextColor="#382184"
+                    FontSize="14"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="End"/>
+            </Border>
+
+            <!-- TITULO -->
+            <Label
+                Text="RESUMEN"
+                FontSize="24"
+                FontAttributes="Bold"
+                TextColor="#382184"
+                HorizontalTextAlignment="Center"/>
+
+            <Label
+                Text="Información del estudiante y sus pagos"
+                FontSize="14"
+                TextColor="#77738C"
+                HorizontalTextAlignment="Center"/>
+
+            <!-- TARJETA -->
+            <Border
+                BackgroundColor="White"
+                Stroke="#DED7FA"
+                StrokeThickness="1"
+                Padding="20"
+                StrokeShape="RoundRectangle 18">
+
+                <Border.Shadow>
+                    <Shadow
+                        Brush="#B8A8E5"
+                        Offset="0,5"
+                        Radius="12"
+                        Opacity="0.18"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="20">
+
+                    <Label
+                        Text="DETALLE DEL REGISTRO"
+                        TextColor="#5634C5"
+                        FontSize="16"
+                        FontAttributes="Bold"/>
+
+                    <!-- GRID 9 FILAS Y 2 COLUMNAS -->
+                    <Grid
+                        RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                        ColumnDefinitions="*,*"
+                        RowSpacing="16"
+                        ColumnSpacing="12">
+
+                        <!-- FILA 1 -->
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Text="Nombre:"
+                            TextColor="#382184"
+                            FontAttributes="Bold"/>
+
+                        <Label
+                            x:Name="lblNombre"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            TextColor="#242033"/>
+
+                        <!-- FILA 2 -->
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Text="Apellido:"
+                            TextColor="#382184"
+                            FontAttributes="Bold"/>
+
+                        <Label
+                            x:Name="lblApellido"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            TextColor="#242033"/>
+
+                        <!-- FILA 3 -->
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Text="Edad:"
+                            TextColor="#382184"
+                            FontAttributes="Bold"/>
+
+                        <Label
+                            x:Name="lblEdad"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            TextColor="#242033"/>
+
+                        <!-- FILA 4 -->
+                        <Label
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Text="Fecha:"
+                            TextColor="#382184"
+                            FontAttributes="Bold"/>
+
+                        <Label
+                            x:Name="lblFecha"
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            TextColor="#242033"/>
+
+                        <!-- FILA 5 -->
+                        <Label
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            Text="Ciudad:"
+                            TextColor="#382184"
+                            FontAttributes="Bold"/>
+
+                        <Label
+                            x:Name="lblCiudad"
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            TextColor="#242033"/>
+
+                        <!-- FILA 6 -->
+                        <Label
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            Text="País:"
+                            TextColor="#382184"
+                            FontAttributes="Bold"/>
+
+                        <Label
+                            x:Name="lblPais"
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            TextColor="#242033"/>
+
+                        <!-- FILA 7 -->
+                        <Label
+                            Grid.Row="6"
+                            Grid.Column="0"
+                            Text="Monto inicial:"
+                            TextColor="#382184"
+                            FontAttributes="Bold"/>
+
+                        <Label
+                            x:Name="lblMontoInicial"
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            TextColor="#242033"/>
+
+                        <!-- FILA 8 -->
+                        <Label
+                            Grid.Row="7"
+                            Grid.Column="0"
+                            Text="Pago mensual:"
+                            TextColor="#382184"
+                            FontAttributes="Bold"/>
+
+                        <Label
+                            x:Name="lblPagoMensual"
+                            Grid.Row="7"
+                            Grid.Column="1"
+                            TextColor="#242033"/>
+
+                        <!-- FILA 9 -->
+                        <Label
+                            Grid.Row="8"
+                            Grid.Column="0"
+                            Text="PAGO TOTAL:"
+                            TextColor="#5634C5"
+                            FontAttributes="Bold"
+                            FontSize="16"/>
+
+                        <Label
+                            x:Name="lblPagoTotal"
+                            Grid.Row="8"
+                            Grid.Column="1"
+                            TextColor="#5634C5"
+                            FontAttributes="Bold"
+                            FontSize="18"/>
+
+                    </Grid>
+
+                    <Border
+                        BackgroundColor="#F1EBFF"
+                        StrokeThickness="0"
+                        Padding="15"
+                        StrokeShape="RoundRectangle 12">
+
+                        <Label
+                            Text="Registro realizado correctamente"
+                            TextColor="#382184"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Center"/>
+                    </Border>
+
+                    <!-- BOTON REGRESAR -->
+                    <Button
+                        Style="{StaticResource BotonGlobal}"
+                        Text="VOLVER AL REGISTRO"
+                        BackgroundColor="#5634C5"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        HeightRequest="50"
+                        CornerRadius="10"
+                        Clicked="BtnVolver_Clicked"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
